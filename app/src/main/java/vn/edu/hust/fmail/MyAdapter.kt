@@ -69,8 +69,7 @@ class MyAdapter(private val itemList: ArrayList<Item>) : BaseAdapter() {
         else viewHolder.checkBox.setButtonDrawable(android.R.drawable.star_off)
         viewHolder.checkBox.setOnClickListener{
             itemList[p0].checkBox = (it as CheckBox).isChecked
-            if (itemList[p0].checkBox) viewHolder.checkBox.setButtonDrawable(android.R.drawable.star_on)
-            else viewHolder.checkBox.setButtonDrawable(android.R.drawable.star_off)
+            notifyDataSetChanged()
         }
         return itemView
     }
